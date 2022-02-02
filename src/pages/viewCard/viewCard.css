@@ -1,0 +1,68 @@
+.card-view {
+    /* border: 2px solid #222; */
+}
+
+.card-view__date {
+    font-family: 'SF Pro Display';
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 46px;
+    color: #0094FF;
+    margin-bottom: 0px;
+}
+
+.card-view__name {
+    font-family: 'SF Pro Display';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #181818;
+    margin: 0px;
+}
+
+.card-view__job {
+    font-family: 'SF Pro Display';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #181818;
+    opacity: 0.5;
+}
+
+.card-view__title {
+    Width: 452px;
+    Height: 138px;
+    font-family: 'SF Pro Display';
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 46px;
+    color: #181818;
+}
+
+.card-view__text {
+    Width: 385px;
+    Height: 44px;
+    font-family: ' SF Pro Display';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #181818;
+    opacity: 0.4;
+}
+
+.card-view__text--content {
+    Width: 450px;
+    Height: 150px;
+    font-family: 'SF Pro Display';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    color: #181818;
+
+}
+
+.card-view__img {
+    width: 435px;
+    height: 385px;
+    border-radius: 22px;
+}
