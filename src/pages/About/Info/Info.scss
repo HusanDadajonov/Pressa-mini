@@ -1,0 +1,44 @@
+.info{
+    &__title{
+        max-width: 452px;
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 46px;
+        color: #181818;
+        margin-bottom: 10px;
+    }
+
+    &__desc--small{
+        max-width: 385px;
+        font-size: 16px;
+        line-height: 22px;
+        color: #181818;
+        opacity: 0.4;
+        margin: 0 0 35px 0;
+    }
+
+    &__desc{
+        font-size: 14px;
+        line-height: 26px;
+        color: #181818;
+        max-width: 450px;
+    }
+
+    &__desc--wrap{
+        margin-bottom: 30px;
+    }
+
+    &__img-wrap{
+        max-width: 435px;
+        margin-bottom: 30px;
+    }
+
+    &__card-wrap{
+        display: flex;
+        
+    }
+
+    &__img{
+        width: 100%;
+    }
+}

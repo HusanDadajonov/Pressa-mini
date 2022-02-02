@@ -1,0 +1,58 @@
+.footer{
+    margin-top: 100px;
+}
+
+.footer
+.row {
+    flex-direction: column;
+}
+
+.footer-logo {
+    text-transform: capitalize;
+    color: #181818;
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 41px;
+    margin-bottom: 25px;
+}
+.footer-link{
+    font-size: 14px;
+    line-height: 17px; 
+    font-weight:400;
+    color: #181818;
+    margin-right: 15px;
+}
+.footer-tel{
+   font-weight: 800;
+   font-size: 20px;
+   line-height: 24px;
+   color: #181818;
+}
+.socials{
+   position: relative; 
+   display: flex;
+   margin-top: 25px;
+}
+.fab-social{
+    Width :34px;
+    Height:34px;
+    background: #181818;
+    border-radius: 50%;
+    margin-right: 14px;
+}   
+.social-icon{
+    position: absolute;
+    color:  #FFFFFF;
+}
+.facebook{
+    top: 8px;
+    left: 8px;
+}
+.insta{
+    top: 8px;
+    left: 6.7%;
+}
+.telegram{
+    top: 8px;
+    left: 12.2%;
+}

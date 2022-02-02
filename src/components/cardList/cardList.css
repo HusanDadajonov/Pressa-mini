@@ -1,0 +1,27 @@
+.cardList{
+    margin-top: 100px;
+}
+.cardList .row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.more-btn {
+    Width: 140px;
+    Height: 40px;
+    background: #181818;    
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    transition: transform;
+}
+.more-btn:hover{
+ opacity: 0.4;
+ cursor: pointer;
+}

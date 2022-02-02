@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*===========================*/
+.container {
+  max-width: 870px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+/*==========Home===========*/
+.intro .row{
+  justify-content: space-between;
+}
+.intro-title {
+  Width:525px;
+  Height:138px;
+  font-family: ' SF Pro Display';
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 46px;
+  color: #181818;
+}
+.intro-text{
+  Width:385px;
+  Height:44px; 
+  font-family: 'SF Pro Display';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #181818;
+  opacity: 0.4;
+}

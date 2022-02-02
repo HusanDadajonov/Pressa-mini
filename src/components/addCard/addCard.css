@@ -1,0 +1,129 @@
+.add-card .row {
+    justify-content: space-between;
+}
+
+.add-card__label_style {
+    font-family: 'Roboto Condensed';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #9F9F9F;
+
+}
+
+.add-card__input_style {
+    background: #FFFFFF;
+    border: 2px solid #181818;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-family: 'SF Pro Display';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #181818;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.navigate-div {
+    display: flex;
+    justify-content: space-between;
+    width: 614px;
+}
+
+.time-div {
+    width: 450px;
+}
+
+.M-label {
+    display: block;
+    width: 280.24px;
+    margin-bottom: 20px;
+}
+
+.M-input {
+    Width: 280px;
+    Height: 40px;
+    padding: 12px 20px;
+}
+
+.S-label {
+    Width: 196px;
+    Height: 16px;
+}
+
+.S-input {
+    Width: 152px;
+    Height: 40px;
+    padding: 11px 20px;
+}
+
+.L-input {
+    Width: 198px;
+    Height: 40px;
+}
+
+.info-Divrow {
+    Width: 199px;
+}
+
+.post-input {
+    width: 445px;
+    height: 40px;
+    border: 2px solid #e7e7e7;
+    background-color: #e5e5e5;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+.upload-img {
+    width: 176px;
+    height: 40px;
+    background: #181818;
+    border: 2px solid #181818;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    font-family: 'SF Pro Display';
+    font-weight: 400;
+    padding: 8px 36px;
+}
+
+.textarea {
+    width: 429px;
+    height: 145px;
+    border: 2px solid #181818;
+    box-sizing: border-box;
+    border-radius: 7px;
+    margin-bottom:20px ;
+}
+
+.button {
+    width: 198px;
+    height: 40px;
+    font-family: 'SF Pro Display';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;  
+}
+
+.delete-btn {
+    background: #FFFFFF;
+    border: 2px solid #181818;
+    box-sizing: border-box;
+    border-radius: 7px;
+    margin-right:23px ;
+}
+
+.submit-btn {
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    border: 2px solid #181818;
+    background: #02080D;
+    box-sizing: border-box;
+
+}
