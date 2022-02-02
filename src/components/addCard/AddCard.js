@@ -4,6 +4,7 @@ import AddItem from './file/AddItem';
 import {FaCloudUploadAlt} from 'react-icons/fa';
 import apiCalls from '../../config/api';
 import { useNavigate, useParams } from 'react-router-dom';
+import Checked from '../checked/Checked';
 
 const AddCard = () => {
 const [file, setFile] = useState(null);
@@ -74,6 +75,7 @@ let navigate = useNavigate();
                     </div>
                     <div>
                         tadbir turi
+                        <Checked/>
                     </div>
                     <AddItem classInput='M-input' text='Link kriting' content='https://www.com.ges' />
 

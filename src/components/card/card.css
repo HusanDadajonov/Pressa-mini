@@ -1,4 +1,5 @@
 .card {
+    position: relative;
     width: 353px;
     height: 409px;
     padding: 30px;
@@ -6,6 +7,10 @@
     background-color: #e7e7e7;
     margin-top: 15px;
     margin-bottom:15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    backface-visibility: hidden;
 }
 
 .card-info{
@@ -16,6 +21,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width:300px;
+    height: 100px;
 }
 .info-content-title{
     font-size: 12px;
@@ -35,7 +42,16 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
-   color: #181818;
+    color: #181818;
+    margin-bottom: 0;
+}
+.info-category{
+    display: block;
+    font-family: 'SF Pro Display';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    
 }
 .card-img {
     Width :353px;
@@ -46,12 +62,43 @@
     Height:173px;
     border-radius: 18px;
 }
+.ul {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 40;
+    border-radius: 14px;
+    padding-left: 0;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    top: 0;
+    opacity: 0;
+    transform: translate(100%);
+    transition: all 0.5s ease;
+}
+.ul li {
+    background: #fff;
+    color:#0094FF;
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: all 0.5s ease;
+    backface-visibility: hidden;
+    border-radius: 12px 12px 0 0;
+}
 /*========*/
 .card:hover{
     background: #0094FF;
     cursor: pointer;
     color: #FFF;
-    /* transform: translateY(-5px) scale(1.005) translateZ(0); */
+    transform: scale(0.9);
 }
 .card:hover .info-title {
     color: #F7f7f7;
@@ -61,4 +108,17 @@
 }
 .card:hover .info-content-text{
     color: #F7f7f7;
+}
+.card:hover .ul {
+    transform: translate(0);
+    opacity: 1;
+}
+.ul li:hover {
+    opacity: 1;
+    transform: translate(-7px, -4px);
+    border-radius: 6px;
+}
+.ul li .card-icon {
+    position: absolute;
+    width: 100%;
 }

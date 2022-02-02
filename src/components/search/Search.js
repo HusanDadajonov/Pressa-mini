@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './search.css'
 import { BiSearch } from 'react-icons/bi';
+import Checked from '../checked/Checked';
 // import * as React from 'react';
 // import Stack from '@mui/material/Stack';
 // import TextField from '@mui/material/TextField';
@@ -70,12 +71,8 @@ document.onclick = function(event) {
           <a href='#' >Notiqlik </a>
         </div>
       </div>
-      <div>
-        <label className="squared">
-        <input className='squared-input' type="checkbox"   />
-        <span className='squared-span'></span>
-    </label>
-    </div>
+      <Checked/>
+      
     </div>
       <div className='search-input'>
         <label className='search-div__label' htmlFor='search'>Speaker ismi sharifi  </label>

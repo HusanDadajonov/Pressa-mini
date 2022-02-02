@@ -2,7 +2,7 @@ import React from 'react';
 import CardList from '../components/cardList/CardList';
 import Search from '../components/search/Search';
 import Adversting from "../components/Advertising/Adversting";
-import { Link } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
