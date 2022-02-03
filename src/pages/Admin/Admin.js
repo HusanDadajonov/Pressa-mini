@@ -2,8 +2,16 @@ import AdminItem from "./AdminItem/AdminItem"
 import Logo from "../../assets/logo.svg"
 import "./Admin.scss"
 import AdminForm from "./AdminForm/AdminForm"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 function Admin(){
+    const [arr,setArr] = useState();
+    const [btnCheck,setBtnCheck] = useState("pendding")
+    useEffect(()=> {
+        fetch(`https://mok2-pressa.herokuapp.com/ad/${btnCheck}`)
+        .then(req => req.json())
+        .then(data => setArr(data))
+    },[btnCheck])
+ 
     const [active,setActive] = useState(1);
     return(
         <div className="admin">
@@ -69,103 +77,55 @@ function Admin(){
                         </div>
                     </div>
                     <ul className="admin__btns-wrap">
-                        <li onClick={() => setActive(1)} className={active === 1 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
+                        <li onClick={() => { setBtnCheck("pendding"); setActive(1)}} className={active === 1 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
                             <button id="1" className="admin__btns-btn">Kutilmoqda</button>
                         </li>   
-                        <li onClick={() => setActive(2)} className={active === 2 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
+                        <li onClick={() => {setBtnCheck("");setActive(2)}} className={active === 2 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
                             <button id="2" className="admin__btns-btn">Qabul qilingan</button>
                         </li>
-                        <li onClick={() => setActive(3)} className={active === 3 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
+                        <li onClick={() => {setBtnCheck("rejected"); setActive(3)}} className={active === 3 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
                             <button id="2" className="admin__btns-btn">Rad etilgan</button>
                         </li>
                     </ul>
                     <ul className="admin__post-list">
-                        <li className="admin__post-item">
-                            <div className="admin__post--wrap">
-                                <h3 className="admin__post-title">Ux Ui dan masterklass o’tkazib yubormang Yoshlar telekanalida</h3>
-                                <div className="adim__post-btns-box">
-                                    <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
-                                    <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
-                                </div>
-                            </div>
-                            <div className="admin__post--texts">
-                                <p className="admin__post--name">Abbos Janizakov</p>
-                                <a className="admin__post--tel" href="tel:+997262347">+997262347</a>
-                                <time className="admin__post--date">30/01/2022</time>
-                                <time className="admin__post--time">15:00</time>
-                                <span className="admin__post--field">front end</span>
-                            </div>
-                        </li>
-                        <li className="admin__post-item">
-                            <div className="admin__post--wrap">
-                                <h3 className="admin__post-title">Ux Ui dan masterklass o’tkazib yubormang Yoshlar telekanalida</h3>
-                                <div className="adim__post-btns-box">
-                                    <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
-                                    <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
-                                </div>
-                            </div>
-                            <div className="admin__post--texts">
-                                <p className="admin__post--name">Abbos Janizakov</p>
-                                <a className="admin__post--tel" href="tel:+997262347">+997262347</a>
-                                <time className="admin__post--date">30/01/2022</time>
-                                <time className="admin__post--time">15:00</time>
-                                <span className="admin__post--field">front end</span>
-                            </div>
-                        </li>
-                        <li className="admin__post-item">
-                            <div className="admin__post--wrap">
-                                <h3 className="admin__post-title">Ux Ui dan masterklass o’tkazib yubormang Yoshlar telekanalida</h3>
-                                <div className="adim__post-btns-box">
-                                    <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
-                                    <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
-                                </div>
-                            </div>
-                            <div className="admin__post--texts">
-                                <p className="admin__post--name">Abbos Janizakov</p>
-                                <a className="admin__post--tel" href="tel:+997262347">+997262347</a>
-                                <time className="admin__post--date">30/01/2022</time>
-                                <time className="admin__post--time">15:00</time>
-                                <span className="admin__post--field">front end</span>
-                            </div>
-                        </li>
-                        <li className="admin__post-item">
-                            <div className="admin__post--wrap">
-                                <h3 className="admin__post-title">Ux Ui dan masterklass o’tkazib yubormang Yoshlar telekanalida</h3>
-                                <div className="adim__post-btns-box">
-                                    <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
-                                    <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
-                                </div>
-                            </div>
-                            <div className="admin__post--texts">
-                                <p className="admin__post--name">Abbos Janizakov</p>
-                                <a className="admin__post--tel" href="tel:+997262347">+997262347</a>
-                                <time className="admin__post--date">30/01/2022</time>
-                                <time className="admin__post--time">15:00</time>
-                                <span className="admin__post--field">front end</span>
-                            </div>
-                        </li>
-                        <li className="admin__post-item">
-                            <div className="admin__post--wrap">
-                                <h3 className="admin__post-title">Ux Ui dan masterklass o’tkazib yubormang Yoshlar telekanalida</h3>
-                                <div className="adim__post-btns-box">
-                                    <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
-                                    <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
-                                </div>
-                            </div>
-                            <div className="admin__post--texts">
-                                <p className="admin__post--name">Abbos Janizakov</p>
-                                <a className="admin__post--tel" href="tel:+997262347">+997262347</a>
-                                <time className="admin__post--date">30/01/2022</time>
-                                <time className="admin__post--time">15:00</time>
-                                <span className="admin__post--field">front end</span>
-                            </div>
-                        </li>
+                            {
+                               arr !== undefined ? 
+                               arr.map(item => (
+                                    <li key={item.id} className="admin__post-item">
+                                        <div className="admin__post--wrap">
+                                            <h3 className="admin__post-title">{item.title}</h3>
+                                            <div className="adim__post-btns-box">
+                                                <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
+                                                <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
+                                            </div>
+                                        </div>
+                                        <div className="admin__post--texts">
+                                            <p className="admin__post--name">{`${item.user.first_name} ${item.user.last_name}`}</p>
+                                            <a className="admin__post--tel" href="tel:+997262347">{item.user.contact}</a>
+                                            <time className="admin__post--date">{item.date}</time>
+                                            <span className="admin__post--field">{item.user.user_job}</span>
+                                        </div>
+                                    </li> 
+                               ))
+                           : ""
+                            }
+                              
                     </ul>
                 </div>
             </div>
         </div>
        
     )
+}
+
+async function putz(id){
+    const response = await fetch('https://mok2-pressa.herokuapp.com/ad',{
+        method: 'PUT',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify({id:id})
+    })
 }
 
 export default Admin

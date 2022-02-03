@@ -28,7 +28,7 @@ const Card = ({ cardEl }) => {
            </div>
            <div>
                <p className='info-content-title'>Speaker:</p>
-               <span className='info-content-text'> Ikrom Sharif</span>
+               <span className='info-content-text'>{`${cardEl.user.first_name} ${cardEl.user.last_name}`}</span>
            </div>
            
           </div> 
