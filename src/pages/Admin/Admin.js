@@ -3,15 +3,13 @@ import Logo from "../../assets/logo.svg"
 import "./Admin.scss"
 import AdminForm from "./AdminForm/AdminForm"
 import { useState } from "react"
-
 function Admin(){
     const [active,setActive] = useState(1);
-    console.log(active);
     return(
         <div className="admin">
             <div className="row">
                 <div className="admin__col col-sm-2">
-                    <img className="admin__logo" src={Logo} alt="logo" />
+                        <img className="admin__logo" src={Logo} alt="logo" />
                     <ul className="admin__list">
                         <AdminItem 
                             icon={
@@ -79,6 +77,88 @@ function Admin(){
                         </li>
                         <li onClick={() => setActive(3)} className={active === 3 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
                             <button id="2" className="admin__btns-btn">Rad etilgan</button>
+                        </li>
+                    </ul>
+                    <ul className="admin__post-list">
+                        <li className="admin__post-item">
+                            <div className="admin__post--wrap">
+                                <h3 className="admin__post-title">Ux Ui dan masterklass o’tkazib yubormang Yoshlar telekanalida</h3>
+                                <div className="adim__post-btns-box">
+                                    <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
+                                    <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
+                                </div>
+                            </div>
+                            <div className="admin__post--texts">
+                                <p className="admin__post--name">Abbos Janizakov</p>
+                                <a className="admin__post--tel" href="tel:+997262347">+997262347</a>
+                                <time className="admin__post--date">30/01/2022</time>
+                                <time className="admin__post--time">15:00</time>
+                                <span className="admin__post--field">front end</span>
+                            </div>
+                        </li>
+                        <li className="admin__post-item">
+                            <div className="admin__post--wrap">
+                                <h3 className="admin__post-title">Ux Ui dan masterklass o’tkazib yubormang Yoshlar telekanalida</h3>
+                                <div className="adim__post-btns-box">
+                                    <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
+                                    <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
+                                </div>
+                            </div>
+                            <div className="admin__post--texts">
+                                <p className="admin__post--name">Abbos Janizakov</p>
+                                <a className="admin__post--tel" href="tel:+997262347">+997262347</a>
+                                <time className="admin__post--date">30/01/2022</time>
+                                <time className="admin__post--time">15:00</time>
+                                <span className="admin__post--field">front end</span>
+                            </div>
+                        </li>
+                        <li className="admin__post-item">
+                            <div className="admin__post--wrap">
+                                <h3 className="admin__post-title">Ux Ui dan masterklass o’tkazib yubormang Yoshlar telekanalida</h3>
+                                <div className="adim__post-btns-box">
+                                    <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
+                                    <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
+                                </div>
+                            </div>
+                            <div className="admin__post--texts">
+                                <p className="admin__post--name">Abbos Janizakov</p>
+                                <a className="admin__post--tel" href="tel:+997262347">+997262347</a>
+                                <time className="admin__post--date">30/01/2022</time>
+                                <time className="admin__post--time">15:00</time>
+                                <span className="admin__post--field">front end</span>
+                            </div>
+                        </li>
+                        <li className="admin__post-item">
+                            <div className="admin__post--wrap">
+                                <h3 className="admin__post-title">Ux Ui dan masterklass o’tkazib yubormang Yoshlar telekanalida</h3>
+                                <div className="adim__post-btns-box">
+                                    <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
+                                    <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
+                                </div>
+                            </div>
+                            <div className="admin__post--texts">
+                                <p className="admin__post--name">Abbos Janizakov</p>
+                                <a className="admin__post--tel" href="tel:+997262347">+997262347</a>
+                                <time className="admin__post--date">30/01/2022</time>
+                                <time className="admin__post--time">15:00</time>
+                                <span className="admin__post--field">front end</span>
+                            </div>
+                        </li>
+                        <li className="admin__post-item">
+                            <div className="admin__post--wrap">
+                                <h3 className="admin__post-title">Ux Ui dan masterklass o’tkazib yubormang Yoshlar telekanalida</h3>
+                                <div className="adim__post-btns-box">
+                                    <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
+                                    <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
+                                </div>
+                            </div>
+                            <div className="admin__post--texts">
+                                <p className="admin__post--name">Abbos Janizakov</p>
+                                <a className="admin__post--tel" href="tel:+997262347">+997262347</a>
+                                <time className="admin__post--date">30/01/2022</time>
+                                <time className="admin__post--time">15:00</time>
+                                <span className="admin__post--field">front end</span>
+                            </div>
                         </li>
                     </ul>
                 </div>
