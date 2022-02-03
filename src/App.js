@@ -10,17 +10,19 @@ import Header from './components/Header/Header.js';
 import ScrollToTop from './components/ScrollToTop';
 import Info from "./pages/About/Info/Info"
 import Admin from "./pages/Admin/Admin";
+import ViewCard from "./pages/viewCard/ViewCard";
 
 function App() {
   return (
     <BrowserRouter>
-<Header/>
-<ScrollToTop/>
+      <Header/>
+      <ScrollToTop/>
       <Routes>
         <Route  path='/' element={<Home />} />
         <Route path='/elon_berish' element={<AddCard/>} />
         <Route path="/about" element={<Info />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/ad/active/1" element={<ViewCard />}></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>

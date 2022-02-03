@@ -7,13 +7,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // import Similar from '../../components/similar/Similar'
 
 
-const ViewCard = () => {
+const ViewCard =  () => {
     const [infoCard, setInfoCard] = useState({})
     const [error, setError] = useState('');
     const { id } = useParams();
     const [similar, setSimilar] = useState([]);
 
-    useEffect(() => {
+
+    useEffect( async () => {
+
         // const getPostsById = async () => {
         //     try {
         //         const data = await apiCalls.getPostsById(id);
@@ -25,12 +27,6 @@ const ViewCard = () => {
         //     }
         // }
         // getPostsById();
-
-     await fetch(`https://mok2-pressa.herokuapp.com/ad/active/${id}`).then(res => res.json())
-        .then(data =>{
-            setInfoCard(data);
-            console.log(data)
-        })
 
     }, [id])
 

@@ -2,6 +2,13 @@ import InfoImg from "../../../assets/info.jpg"
 import "./Info.scss"
 import Adversting from "../../../components/Advertising/Adversting"
 function Info(){
+
+    async function FetHandler(){
+        let req =  await fetch(`https://mok2-pressa.herokuapp.com/ad/active/1`)
+        console.log(await req.json());
+    }
+    FetHandler()
+
     return(
         <section className="info">
             <div className="info__container container">

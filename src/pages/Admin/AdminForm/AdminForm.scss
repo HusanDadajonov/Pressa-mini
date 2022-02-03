@@ -1,0 +1,28 @@
+.form{
+    &__search{
+        width: 100%;
+        padding: 10px 10px 10px 60px;
+        border: 1px solid #383636;
+        border-radius: 5px 20px 20px 5px;
+        background-image: url("../../../assets/search.svg");
+        background-position: center left 15px;
+        background-repeat: no-repeat;
+        color: #383636;
+        font-size: 15px;
+
+        &::placeholder{
+            color: #383636;
+            font-size: 15px;
+        }
+
+        &:focus{
+            outline: none;
+        }
+
+        &::-webkit-search-cancel-button { 
+            -webkit-appearance: none; 
+        }
+    }
+}
+
+

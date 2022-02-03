@@ -1,9 +1,76 @@
 .admin{
+   
     &__list{
         list-style:none;
+        padding: 55px 0 0 0;
         padding-top: 55px;
     }
 
+    &__btns-wrap{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    &__btns-btn{
+        cursor: pointer;
+        padding: 15px 25px;
+        border: none;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 20px;
+        color: #030303;
+        opacity: 0.4;
+        background: transparent;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        border-radius: 50px;
+        transition: all 0.4s ease;
+
+        &:hover{
+            background: #181818;
+            opacity: 1;
+            color: #fff;
+            border-color: #734e3f;
+        }
+    }
+
+    &__btns--item--act button{
+        background: #181818;
+        opacity: 1;
+        color: #fff;
+        border-color: #734e3f;
+    }
+
+    &__btns--item{
+        &:not(:last-child){
+            margin-right: 40px;
+        }
+    }
+
+
+    &__col{
+        padding-top: 30px;
+        height: 100vh;
+
+        &:nth-child(1){
+            padding-left: 30px;
+            border-right: 1px solid #383636;
+        }
+
+        &:nth-child(2){
+            padding-left: 20px;
+        }
+    }
+
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     &__item{
         display: flex;
@@ -15,7 +82,73 @@
         }
     }
 
+    &__notification{
+        position: relative;
+        padding: 0;
+        border: none;
+        background: none;
+        margin: 0 30px 0 100px;
+    }
+
+    &__notification--count{
+        width: 15px;
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center ;
+        background: #000;
+        border-radius: 50%;
+        position:absolute;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: #fff;
+        right: -20%;
+        top: -40%;
+    }
+
+    &__form{
+        width: 100%;
+    }
+
     &__item svg{
         margin-right: 13px;
+    }
+
+    &__account{
+        display: flex;
+        align-items: center;
+    }
+
+    &__user{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      
+    }
+
+    &__img-wrap{
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+    }
+
+    &__user-name{
+        margin: 0 0 3px 0;
+        width: 130px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 22px;
+        color: #030303;
+    }
+
+    &__user-id{
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 16px;
+        color: #030303;
+        opacity: 0.3;
     }
 }
