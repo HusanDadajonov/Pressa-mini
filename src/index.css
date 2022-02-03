@@ -1,8 +1,14 @@
+
+@font-face {
+  font-family: 'SF';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF'), url('./assets/SF\ Pro\ display/SF Pro Display Black.ttf') format('ttf');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:"SF";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -49,4 +55,9 @@ a {
   line-height: 22px;
   color: #181818;
   opacity: 0.4;
+}
+
+.row{
+  margin-left: 0;
+  margin-right: 0;
 }
