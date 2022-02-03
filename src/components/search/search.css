@@ -1,4 +1,4 @@
-.bigSearch{
+.bigSearch {
     width: 472px;
     margin-top: 20px;
 }
@@ -22,12 +22,14 @@
     box-sizing: border-box;
     border-radius: 7px;
 }
+
 .dropdown {
     position: relative;
     display: block;
-    Width :175px;
+    Width: 175px;
 }
-.dropdown__label{
+
+.dropdown__label {
     display: block;
     margin-bottom: 8px;
 }
@@ -72,9 +74,14 @@
     Height: 40px;
     margin: 50px 0;
 }
+.search-input{
+    margin-top: 20px;
+}
+
 .search-div {
     position: relative;
 }
+
 .search-div__label {
     display: block;
     margin-bottom: 12px;
@@ -103,5 +110,21 @@
     top: 17px;
 }
 
-
-  
+.check-box {
+    font-family: 'SF Pro Display';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #181818;
+}
+.check-box-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 27px;
+    height: 54px;
+    margin-left: 20px;
+}
+.offline{
+margin-top:4px;
+}

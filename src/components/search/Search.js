@@ -14,6 +14,7 @@ import Checked from '../checked/Checked';
 
 const Search = () => {
   const [value, setValue] = useState(new Date('2022-08-18T21:11:54'));
+  const [checkbox, setCheckbox] = useState(false)
 
   const handleChange = (newValue) => {
     setValue(newValue);
@@ -71,7 +72,14 @@ document.onclick = function(event) {
           <a href='#' >Notiqlik </a>
         </div>
       </div>
-      <Checked/>
+      <div className='row'>
+        <Checked  check={setCheckbox} />
+        <span className='check-box-div'>
+          <span className=' check-box offline'>Offline</span>
+        <span className='check-box online'>Online </span>
+        </span>
+      </div>
+      {console.log(checkbox)}
       
     </div>
       <div className='search-input'>

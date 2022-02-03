@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom"
-import Logo from "../../assets/logo.svg"
-import HeaderItem from "./HeaderItem/HeaderItem"
-import "./Header.scss"
+import { Link } from "react-router-dom";
+import Logo from "../../assets/logo.svg";
+import HeaderItem from "./HeaderItem/HeaderItem";
+import "./Header.scss";
 
 function Header (){
     return(
@@ -16,7 +16,9 @@ function Header (){
                     <HeaderItem path="/" text="Bosh sahifa"/>
                 </ul>
                 <div className="header__btns--wrap">
-                    <button className="header__btn">+e'lon berish</button>
+                   <Link to='/elon_berish'>
+                       <button className="header__btn">+e'lon berish</button>
+                    </Link> 
                 </div>
             </div>
         </header>    

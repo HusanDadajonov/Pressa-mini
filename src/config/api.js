@@ -9,7 +9,7 @@ const apiCalls = {
         return axiosClient.get(`/?category=IT`, {params});
     },
     getPostsById: (id) =>{
-      return axiosClient.get(`/ad/active/${id}`);
+      return axiosClient.post(`/ad/active/${id}`);
     },
   
   };

@@ -17,15 +17,16 @@ const Footer = () => {
 
 
             <div className='socials'>
-                <div className='fab-social'>
+                <div className='fab-social fab-facebook'>
                 <a href='' >
                   <FaFacebookF className='social-icon facebook '/>
                 </a></div>
-                <div className='fab-social'> <a href=''>
+                <div className='fab-insta'> 
+                <a href='https://www.instagram.com/najottalim/' target='_blank'>
                     <FaInstagram className='social-icon insta'/></a>
                 </div>
-                <div className='fab-social'>
-                     <a href=''><FaTelegramPlane className='social-icon telegram'/>  </a>
+                <div className=' fab-telegram'>
+                     <a target='_blank' href='https://t.me/najottalim'><FaTelegramPlane className='social-icon telegram'/>  </a>
                 </div>
                
             </div>
