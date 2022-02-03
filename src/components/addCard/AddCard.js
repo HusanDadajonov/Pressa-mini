@@ -83,7 +83,7 @@ let navigate = useNavigate();
                         <h4>Organizator</h4>
                         <div className='row info-Divrow '>
                           <AddItem classInput='L-input' text='Ism' content='Ism' />
-                          <AddItem classInput='L-input' text='Familya' content='Familya' />
+                          <AddItem classInput='L-input' class='S-label ' text='Familya' content='Familya' />
                         </div>
                         <AddItem classInput='L-input' text='telefon nomer' type='number'  content='+9989212345678'/>
                     </div>

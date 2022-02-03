@@ -28,36 +28,10 @@ code {
 
 .row {
   display: flex;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 a {
   text-decoration: none;
-}
-/*==========Home===========*/
-.intro .row{
-  justify-content: space-between;
-}
-.intro-title {
-  Width:525px;
-  Height:138px;
-  font-family: ' SF Pro Display';
-  font-weight: 600;
-  font-size: 34px;
-  line-height: 46px;
-  color: #181818;
-}
-.intro-text{
-  Width:385px;
-  Height:44px; 
-  font-family: 'SF Pro Display';
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
-  color: #181818;
-  opacity: 0.4;
-}
-
-.row{
-  margin-left: 0;
-  margin-right: 0;
 }

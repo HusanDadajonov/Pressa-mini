@@ -12,8 +12,8 @@
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
-	height: 40px;
-	width: 22px;
+	height: 36px;
+	width: 18px;
 	transform: scale(1.5);
 }
 
@@ -23,8 +23,8 @@
 	position: absolute;
 	top: 2px;
 	left: 3.2px;
-	height: 15px;
-	width: 15px;
+	height: 13px;
+	width: 13px;
 	transform: translateX(0px);
 	transition: transform 0.2s linear;
 }

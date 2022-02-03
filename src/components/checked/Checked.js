@@ -1,12 +1,13 @@
 import React from 'react';
 import './checked.css'
 
-const Checked = () => {
+const Checked = ({check}) => {
 	return (
 		<>
-			<input type="checkbox" className="checkbox" id="chk" />
+			<input type="checkbox" onClick={(e) =>check(e.target.checked) } className="checkbox" id="chk" />
+			
 			<label className="label" htmlFor="chk">
-				<div className="ball"></div>
+				<div className="ball"></div> 
 			</label>
 		</>
 

@@ -1,5 +1,6 @@
 .footer{
     margin-top: 100px;
+    padding-bottom:50px;
 }
 
 .footer
@@ -38,8 +39,24 @@
     Height:34px;
     background: #181818;
     border-radius: 50%;
-    margin-right: 15px;
-}   
+}
+.fab-facebook{
+    margin-right: 25px;
+} 
+.fab-insta{
+    Width :34px;
+    Height:34px;
+    background: #181818;
+    border-radius: 50%;
+    margin-left: -9px;
+} 
+.fab-telegram{
+    Width :34px;
+    Height:34px;
+    background: #181818;
+    border-radius: 50%;
+    margin-left: 16px;
+} 
 .social-icon{
     position: absolute;
     color:  #FFFFFF;
@@ -55,4 +72,9 @@
 .telegram{
     top: 8px;
     left: 12.2%;
+}
+@media(max-width:992px){
+    .fab-social{
+        margin-right: 10px;
+    }
 }

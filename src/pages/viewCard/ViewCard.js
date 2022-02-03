@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './viewCard.css'
+import './viewCard.css';
+import ViewImg from '../../assets/info.jpg'
 import { useParams } from "react-router-dom";
 import apiCalls from '../../config/api';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,19 +17,32 @@ const ViewCard =  () => {
 
     useEffect( async () => {
 
-        // const getPostsById = async () => {
-        //     try {
-        //         const data = await apiCalls.getPostsById(id);
-        //         setInfoCard(data.json());
-        //         console.log(data.json());
-        //     } catch (err) {
-        //         setError(err.message);
-        //         console.log(err.message)
-        //     }
-        // }
-        // getPostsById();
+        const getPostsById = async () => {
+            try {
+                const data = await apiCalls.getPostsById(id);
+                setInfoCard(data);
+                console.log(data);
+            } catch (err) {
+                setError(err.message);
+                console.log(err.message)
+            }
+        }
+        getPostsById();
 
-    }, [id])
+        const discover = async () => {
+            try {
+                const data = await apiCalls.discover(id);
+                setSimilar(data);
+                console.log(data);
+            } catch (err) {
+                setError(err.message);
+                console.log(err.message)
+            }
+
+        }
+        discover();
+
+    }, [])
 
     // const newArr =
     //     <Swiper grabCursor={true} spaceBetween={0} slidesPerView={6} loop >
@@ -59,15 +73,12 @@ const ViewCard =  () => {
                 <p className='card-view__text'>Reference site giving information on its origins, as well as a random Lipsum generator.</p>
                 <p className='card-view__text--content'> Ta’kidlanishicha, hozirda qozonxonalardagi tabiiy gaz bosimini ko‘tarish bo‘yicha mutasaddilar bilan hamkorlikda ishlar olib borilmoqda.
                     Uy-joy kommunal xizmat ko‘rsatish vazirligi 25 yanvar kuni 3−4 soat ichida Toshkent shahridagi markaziy isitish qozonxonalar to‘liq ishlay boshlashi haqida xabar bergandi.</p>
-                <img className='card-view__img' src='./assets/cardArrow.svg' alt=' ' />
+                <img className='card-view__img' src={ViewImg} alt=' ' />
                 <p className='card-view__text--content'>
                     Ta’kidlanishicha, hozirda qozonxonalardagi tabiiy gaz bosimini ko‘tarish bo‘yicha mutasaddilar bilan hamkorlikda ishlar olib borilmoqda.
                     Uy-joy kommunal xizmat ko‘rsatish vazirligi 25 yanvar kuni 3−4 soat ichida Toshkent shahridagi markaziy isitish qozonxonalar to‘liq ishlay boshlashi haqida xabar bergandi.
                 </p>
-
                 {/* {console.log(newArr)} */}
-
-
                 {/* <>{infoCard.category}</>
         <>{infoCard.description}</>
         <>{infoCard.img}</>  */}

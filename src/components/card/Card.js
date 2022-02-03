@@ -13,14 +13,18 @@ const Card = ({ cardEl }) => {
        <li>
         <BsFillArrowRightCircleFill className='card-icon'/>
        </li>
-       </a> 
+    </a> 
+    <li className='info-content'>
+       {cardEl.watch_type}
+    </li>
    </ul>
       <div className='card-info' >
           <h3 className='info-title'> {cardEl.title} </h3>
+          <span>{cardEl.category}</span>        
           <div className='info-content'>
             <div>
               <p className='info-content-title'>Tadbir sanasi:</p>
-              <span className='info-content-text'>{ cardEl.date}</span>
+              <span className='info-content-text'>{cardEl.date}</span>
            </div>
            <div>
                <p className='info-content-title'>Speaker:</p>
@@ -28,8 +32,7 @@ const Card = ({ cardEl }) => {
            </div>
            
           </div> 
-          <span>{cardEl.watch_type}</span> <br/>
-          {cardEl.category}
+          
       </div>
       <div className='card-img' >
           <img  className='card-img__img' src={IMG_URL +  cardEl.img}/>
