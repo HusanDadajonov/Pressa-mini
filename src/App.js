@@ -14,15 +14,15 @@ import Admin from "./pages/Admin/Admin";
 function App() {
   return (
     <BrowserRouter>
-<Header/>
-<ScrollToTop/>
+      <Header />
+      <ScrollToTop />
       <Routes>
-        <Route  path='/' element={<Home />} />
-        <Route path='/elon_berish' element={<AddCard/>} />
+        <Route path='/' element={<Home />} />
+        <Route path='/elon_berish' element={<AddCard />} />
         <Route path="/about" element={<Info />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }
