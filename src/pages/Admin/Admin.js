@@ -3,16 +3,45 @@ import Logo from "../../assets/logo.svg"
 import "./Admin.scss"
 import AdminForm from "./AdminForm/AdminForm"
 import { useState, useEffect } from "react"
+import PutMethod from "./AdminPut/AdminPut"
 function Admin(){
+
+    const [notificationLength, setNotificationLength] = useState()
     const [arr,setArr] = useState();
-    const [btnCheck,setBtnCheck] = useState("pendding")
+    const [btnCheck,setBtnCheck] = useState("/pendding")
+    const [active,setActive] = useState(1);
+    const [cancelBtn,setCancelBtn] = useState(false);
+    const [acceptBtn,setAcceptBtn] = useState(false);
+
+    function Cancel(e){
+        PutMethod(e.target.id,2)
+    }
+
+    function Accept(e){
+        PutMethod(e.target.id,1)
+    }
+
+    function RemoveItem(e){
+        e.target.parentElement.parentElement.parentElement.className = `admin__post-item remove-slider`;
+    }
+
     useEffect(()=> {
-        fetch(`https://mok2-pressa.herokuapp.com/ad/${btnCheck}`)
+        fetch(`https://mok2-pressa.herokuapp.com/ad/pendding`)
+        .then(req => req.json())
+        .then(data => setNotificationLength(data))
+    },[Cancel],[Accept])
+    
+
+    useEffect(()=> {
+        fetch(`https://mok2-pressa.herokuapp.com/ad${btnCheck}`)
         .then(req => req.json())
         .then(data => setArr(data))
     },[btnCheck])
  
-    const [active,setActive] = useState(1);
+   
+
+    
+
     return(
         <div className="admin">
             <div className="row">
@@ -65,7 +94,7 @@ function Admin(){
                 <div className="admin__col col-sm-10">
                     <div className="admin__header">
                         <AdminForm />
-                        <button className="admin__notification"><svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 15H17L15.595 13.595C15.4063 13.4063 15.2567 13.1822 15.1546 12.9357C15.0525 12.6891 15 12.4249 15 12.158V9C15.0002 7.75894 14.6156 6.54834 13.8992 5.53489C13.1829 4.52144 12.17 3.75496 11 3.341V3C11 2.46957 10.7893 1.96086 10.4142 1.58579C10.0391 1.21071 9.53043 1 9 1C8.46957 1 7.96086 1.21071 7.58579 1.58579C7.21071 1.96086 7 2.46957 7 3V3.341C4.67 4.165 3 6.388 3 9V12.159C3 12.697 2.786 13.214 2.405 13.595L1 15H6M12 15H6M12 15V16C12 16.7956 11.6839 17.5587 11.1213 18.1213C10.5587 18.6839 9.79565 19 9 19C8.20435 19 7.44129 18.6839 6.87868 18.1213C6.31607 17.5587 6 16.7956 6 16V15" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg><span className="admin__notification--count">3</span></button>
+                        <button className="admin__notification"><svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 15H17L15.595 13.595C15.4063 13.4063 15.2567 13.1822 15.1546 12.9357C15.0525 12.6891 15 12.4249 15 12.158V9C15.0002 7.75894 14.6156 6.54834 13.8992 5.53489C13.1829 4.52144 12.17 3.75496 11 3.341V3C11 2.46957 10.7893 1.96086 10.4142 1.58579C10.0391 1.21071 9.53043 1 9 1C8.46957 1 7.96086 1.21071 7.58579 1.58579C7.21071 1.96086 7 2.46957 7 3V3.341C4.67 4.165 3 6.388 3 9V12.159C3 12.697 2.786 13.214 2.405 13.595L1 15H6M12 15H6M12 15V16C12 16.7956 11.6839 17.5587 11.1213 18.1213C10.5587 18.6839 9.79565 19 9 19C8.20435 19 7.44129 18.6839 6.87868 18.1213C6.31607 17.5587 6 16.7956 6 16V15" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg><span className="admin__notification--count">{notificationLength !== undefined ? notificationLength.length : "" }</span></button>
                         <div className="admin__account">
                             <div className="admin__img-wrap">
                                 <img className="admin__user" src="https://www.replinfosys.com/archicad/images/Softwares-support-icon.png" alt="user" />
@@ -77,13 +106,13 @@ function Admin(){
                         </div>
                     </div>
                     <ul className="admin__btns-wrap">
-                        <li onClick={() => { setBtnCheck("pendding"); setActive(1)}} className={active === 1 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
+                        <li onClick={() => { setBtnCheck("/pendding?limit=1000"); setActive(1);setCancelBtn(false);setAcceptBtn(false)}} className={active === 1 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
                             <button id="1" className="admin__btns-btn">Kutilmoqda</button>
                         </li>   
-                        <li onClick={() => {setBtnCheck("");setActive(2)}} className={active === 2 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
+                        <li onClick={() => {setBtnCheck("?limit=1000");setActive(2);setAcceptBtn(true);setCancelBtn(false)}} className={active === 2 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
                             <button id="2" className="admin__btns-btn">Qabul qilingan</button>
                         </li>
-                        <li onClick={() => {setBtnCheck("rejected"); setActive(3)}} className={active === 3 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
+                        <li onClick={(e) => {setBtnCheck("/rejected?limit=1000");setActive(3);setCancelBtn(true);setAcceptBtn(false)}} className={active === 3 ? `admin__btns--item admin__btns--item--act` : `admin__btns--item`}>
                             <button id="2" className="admin__btns-btn">Rad etilgan</button>
                         </li>
                     </ul>
@@ -95,8 +124,9 @@ function Admin(){
                                         <div className="admin__post--wrap">
                                             <h3 className="admin__post-title">{item.title}</h3>
                                             <div className="adim__post-btns-box">
-                                                <button className="admin__post--btn admin__post--btn-cancel">Bekor qilish</button>
-                                                <button className="admin__post--btn admin__post--btn-confirmation">Tasdiqlash</button>
+                                                {cancelBtn ? "" : <button id={item.id}  className="admin__post--btn admin__post--btn-cancel" onClick={(e)=> {Cancel(e);RemoveItem(e)}}>Bekor qilish</button>}
+                                                {acceptBtn ? "" : <button id={item.id} className="admin__post--btn admin__post--btn-confirmation" onClick={(e)=> {Accept(e);RemoveItem(e)}}>Tasdiqlash</button>}
+                                                
                                             </div>
                                         </div>
                                         <div className="admin__post--texts">
@@ -116,16 +146,10 @@ function Admin(){
         </div>
        
     )
+
+
 }
 
-async function putz(id){
-    const response = await fetch('https://mok2-pressa.herokuapp.com/ad',{
-        method: 'PUT',
-        headers:{
-            'Content-Type':'application/json'
-        },
-        body: JSON.stringify({id:id})
-    })
-}
+
 
 export default Admin
