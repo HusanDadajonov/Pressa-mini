@@ -1,6 +1,3 @@
-.card-view {
-    /* border: 2px solid #222; */
-}
 
 .card-view__date {
     font-family: 'SF Pro Display';
@@ -20,6 +17,10 @@
     margin: 0px;
 }
 
+.card-view__list{
+    height: 500px;
+}
+
 .card-view__job {
     font-family: 'SF Pro Display';
     font-weight: 400;
@@ -30,8 +31,7 @@
 }
 
 .card-view__title {
-    Width: 452px;
-    Height: 138px;
+    max-width: 452px;
     font-family: 'SF Pro Display';
     font-weight: 600;
     font-size: 34px;
@@ -40,8 +40,7 @@
 }
 
 .card-view__text {
-    Width: 385px;
-    Height: 44px;
+    max-width: 385px;
     font-family: ' SF Pro Display';
     font-weight: 400;
     font-size: 14px;
@@ -51,8 +50,7 @@
 }
 
 .card-view__text--content {
-    Width: 450px;
-    Height: 150px;
+    max-width: 450px;
     font-family: 'SF Pro Display';
     font-weight: 400;
     font-size: 14px;
@@ -65,4 +63,98 @@
     width: 435px;
     height: 385px;
     border-radius: 22px;
+    object-fit:fill;
+    margin-bottom: 20px;
 }
+
+.card-view__wrap{
+    display: flex;
+    align-items: center;
+}
+
+.card-view__item{
+    display: flex;
+    align-items: center;
+}
+
+.card-view__item:not(:last-child){
+    margin-right: 22px;
+}
+
+.card-view__format-img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.card-view__format{
+    display: flex;
+    align-items: center;
+}
+
+.card-view__formats{
+    max-width: 435px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-view__wrap{
+    max-width: 435px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-view__link{
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: dashed;
+    display: flex;
+    align-items: center;
+    color: #0094FF;
+}
+
+.bi-box-arrow-up-right{
+    margin-right: 5px;
+    fill: #0094FF;
+}
+
+.card-view__list{
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.card-view__pagenation{
+    padding: 14px 18px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.card-view__pagenation:hover{
+    background: #181818;
+}
+
+
+.card-view__pagenation:not(:last-child){
+    margin-right: 15px;
+}
+
+.card-view__pagenation-box{
+    display: flex;
+    align-items: center;
+}
+
+.card-view__pagenation--active{
+    background: #181818;
+}
+
+
+

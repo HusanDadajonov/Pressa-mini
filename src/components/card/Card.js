@@ -3,7 +3,6 @@ import './card.css';
 import {BsFillArrowRightCircleFill} from 'react-icons/bs';
 
 const Card = ({ cardEl }) => {
-
   const IMG_URL = 'https://mok2-pressa.herokuapp.com/data'
   return (
   <div className='card'>
@@ -30,14 +29,12 @@ const Card = ({ cardEl }) => {
                <p className='info-content-title'>Speaker:</p>
                <span className='info-content-text'>{`${cardEl.user.first_name} ${cardEl.user.last_name}`}</span>
            </div>
-           
           </div> 
-          
       </div>
       <div className='card-img' >
           <img  className='card-img__img' src={IMG_URL +  cardEl.img}/>
       </div>
-</div>
+   </div>
   </div>
   );
 };
