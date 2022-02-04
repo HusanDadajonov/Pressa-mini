@@ -16,6 +16,7 @@
 	height: 36px;
 	width: 18px;
 	transform: scale(1.5);
+<<<<<<< HEAD
 	margin: 20px 0;
 }
 
@@ -30,6 +31,9 @@
 .post-input-format--wrap{
 	display: flex;
 	align-items: center;
+=======
+	margin-top: 20px;
+>>>>>>> ae872aa255055bc2360838af755cc6422e44795a
 }
 
 .label .ball {
