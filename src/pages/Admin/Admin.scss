@@ -254,5 +254,12 @@
 }
 
 .remove-slider{
-    display: none;
+    transform: translateX(-100%);
+    transition: all 0.6s ease;
+}
+.display-none{
+   display: none;
+}
+.remove-display{
+    display: flex;
 }
