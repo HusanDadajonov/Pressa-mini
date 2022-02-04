@@ -31,12 +31,13 @@
 
 .card-view__title {
     Width: 452px;
-    Height: 138px;
+    max-height: 138px;
     font-family: 'SF Pro Display';
     font-weight: 600;
     font-size: 34px;
     line-height: 46px;
     color: #181818;
+    margin-bottom: 0;
 }
 
 .card-view__text {

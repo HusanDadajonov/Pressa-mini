@@ -4,9 +4,11 @@ import ViewImg from '../../assets/info.jpg'
 import { useParams } from "react-router-dom";
 import apiCalls from '../../config/api';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { info } from 'sass';
 // import {Swiper , SwiperSlide} from 'swiper/react';s
 // import Similar from '../../components/similar/Similar'
 
+const VIEW_IMG = 'https://mok2-pressa.herokuapp.com/data/ad/active/id'
 
 const ViewCard =  () => {
     const [infoCard, setInfoCard] = useState({})
@@ -29,18 +31,30 @@ const ViewCard =  () => {
         }
         getPostsById();
 
-        const discover = async () => {
-            try {
-                const data = await apiCalls.discover(id);
-                setSimilar(data);
-                console.log(data);
-            } catch (err) {
-                setError(err.message);
-                console.log(err.message)
-            }
+        // const getImgById = async () => {
+        //     try {
+        //         const data = await apiCalls.getImgById(id);
+        //         setInfoCard(data);
+        //         console.log(data);
+        //     } catch (err) {
+        //         setError(err.message);
+        //         console.log(err.message)
+        //     }
+        // }
+        // getImgById();
 
-        }
-        discover();
+        // const discover = async () => {
+        //     try {
+        //         const data = await apiCalls.discover(id);
+        //         setSimilar(data);
+        //         console.log(data);
+        //     } catch (err) {
+        //         setError(err.message);
+        //         console.log(err.message)
+        //     }
+
+        // }
+        // discover();
 
     }, [])
 
@@ -63,20 +77,17 @@ const ViewCard =  () => {
         <div className='container'>
             <div className='card-view'>
                 <h2 className='card-view__date'>
-                    12 Fevral  |  12:00
                     {infoCard.date}
                 </h2>
-                <h4 className='card-view__name'>Shahnoza Maxmudova</h4>
+                <h4 className='card-view__name'>Shahnoza Maxmudova </h4>
                 <span className='card-view__job'>Grafik design</span>
 
-                <h3 className='card-view__title'>Reference site giving information on its origins, random.</h3>
-                <p className='card-view__text'>Reference site giving information on its origins, as well as a random Lipsum generator.</p>
-                <p className='card-view__text--content'> Ta’kidlanishicha, hozirda qozonxonalardagi tabiiy gaz bosimini ko‘tarish bo‘yicha mutasaddilar bilan hamkorlikda ishlar olib borilmoqda.
-                    Uy-joy kommunal xizmat ko‘rsatish vazirligi 25 yanvar kuni 3−4 soat ichida Toshkent shahridagi markaziy isitish qozonxonalar to‘liq ishlay boshlashi haqida xabar bergandi.</p>
-                <img className='card-view__img' src={ViewImg} alt=' ' />
+                <h3 className='card-view__title'> {infoCard.title}</h3>
+                <p className='card-view__text'>{infoCard.short_description}</p>
+                <p className='card-view__text--content'>{infoCard.description}</p>
+                {/* <img className='card-view__img' src={`https://mok2-pressa.herokuapp.com/data/ad/active/${infoCard.id}` + infoCard.img} alt={infoCard.title} /> */}
                 <p className='card-view__text--content'>
-                    Ta’kidlanishicha, hozirda qozonxonalardagi tabiiy gaz bosimini ko‘tarish bo‘yicha mutasaddilar bilan hamkorlikda ishlar olib borilmoqda.
-                    Uy-joy kommunal xizmat ko‘rsatish vazirligi 25 yanvar kuni 3−4 soat ichida Toshkent shahridagi markaziy isitish qozonxonalar to‘liq ishlay boshlashi haqida xabar bergandi.
+                {infoCard.description}
                 </p>
                 {/* {console.log(newArr)} */}
                 {/* <>{infoCard.category}</>

@@ -1,5 +1,5 @@
 .bigSearch {
-    width: 472px;
+    width: 528px;
     margin-top: 20px;
 }
 
@@ -126,5 +126,8 @@
     margin-left: 20px;
 }
 .offline{
-margin-top:4px;
+margin-top:11px;
+}
+.online{
+    margin-bottom: -6px;
 }

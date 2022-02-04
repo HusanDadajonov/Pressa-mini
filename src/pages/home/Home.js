@@ -7,20 +7,20 @@ import './home.css'
 const Home = () => {
   return (
     <div className='intro'>
-    <div className='container'> 
-     <div className='intro-info'>
-      <h1 className='intro-title'>Reference site giving information on its origins, as well as a random Lipsum generator. </h1>
-      <p className='intro-text'>Reference site giving information on its origins, as well as a random Lipsum generator. </p>
+      <div className='container'>
+        <div className='intro-info'>
+          <h1 className='intro-title'>Reference site giving information on its origins, as well as a random Lipsum generator. </h1>
+          <p className='intro-text'>Reference site giving information on its origins, as well as a random Lipsum generator. </p>
 
-    </div>
-    <Search/>
-     <CardList/>
-     <div className='row' >
-     <Adversting/> 
-         <Adversting/>
-     </div>
-     
-    </div>
+        </div>
+        <Search />
+        <CardList />
+        <div className='row' >
+          <Adversting />
+          <Adversting />
+        </div>
+
+      </div>
     </div>
   )
 };

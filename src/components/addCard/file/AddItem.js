@@ -6,7 +6,9 @@ const AddItem = (props) => {
 
             <div>
                 <label className={`add-card__label_style M-label  ${props.class}`}> {props.text}</label> 
-                <input className={`add-card__input_style  M-input ${props.classInput}`} type={props.type} defaultValue={props.content} />
+                <input className={`add-card__input_style  M-input ${props.classInput}`} type={props.type} 
+                defaultValue={props.content} 
+                />
             </div>
        
     );
