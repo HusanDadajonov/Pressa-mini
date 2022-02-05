@@ -1,11 +1,4 @@
 
-@font-face {
-  font-family: 'SF';
-  font-style: normal;
-  font-weight: normal;
-  src: local('SF'), url('./assets/SF\ Pro\ display/SF Pro Display Black.ttf') format('ttf');
-}
-
 body {
   margin: 0;
   font-family:"SF";

@@ -1,10 +1,10 @@
-function AdminCard({item,cancelBtn,acceptBtn,Cancel,Accept,RemoveItem}){
+function AdminCard({item,cancelBtn,acceptBtn,Cancel,Accept,RemoveItem,setClickedCancel}){
     return(
         <li  className="admin__post-item">
             <div className="admin__post--wrap">
                 <h3 className="admin__post-title">{item.title}</h3>
                 <div className="adim__post-btns-box">
-                    {cancelBtn ? "" : <button id={item.id}  className="admin__post--btn admin__post--btn-cancel" onClick={(e)=> {Cancel(e);RemoveItem(e)}}>Bekor qilish</button>}
+                    {cancelBtn ? "" : <button id={item.id}  className="admin__post--btn admin__post--btn-cancel" onClick={(e)=> {Cancel(e);RemoveItem(e);setClickedCancel(true)}}>Bekor qilish</button>}
                     {acceptBtn ? "" : <button id={item.id} className="admin__post--btn admin__post--btn-confirmation" onClick={(e)=> {Accept(e);RemoveItem(e)}}>Tasdiqlash</button>}
                     
                 </div>

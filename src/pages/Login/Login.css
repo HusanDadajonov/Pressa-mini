@@ -1,0 +1,55 @@
+.my-form{
+    height: 342px;
+    border: 2px solid #181818;
+    padding: 30px 50px;
+    border-radius: 10px;
+    max-width: 274px;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .form-title{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .form-title h1{
+    margin: 0px;
+    color: #181818;
+  }
+  .single-input{
+    width: 270px;
+    border:1px solid #181818;
+    display: flex;
+    margin-bottom: 15px;
+  }
+  .single-input i{
+    padding: 8px 16px;
+    color: #181818;
+  }
+  .single-input input{
+    border:0px solid #c1c1c1;
+    width: 100%;
+    outline: none;
+    height: 30px;
+    font-size: 18px;
+  }
+  .err{
+      color: red;
+      display: block;
+      margin-bottom: 5px;
+      height: 38px;
+      width: 100%;
+  }
+  .submit-btn{
+     border:0px solid #c1c1c1;
+     margin-top: 30px;
+    
+  }
+  .submit-btn input{
+     background: #181818;
+     color: #fff;
+     cursor: pointer; 
+     padding: 5px;
+     border-radius: 20px;
+  }

@@ -23,7 +23,9 @@
     color: #181818;
     outline: none;
     margin-bottom: 20px;
+   
 }
+
 
 .navigate-div {
     display: flex;
@@ -167,9 +169,18 @@ button{
 }
 .Link-input{
     font-weight: 500;
-font-size: 12px;
-line-height: 14px;
-text-decoration-line: underline;
+    font-size: 12px;
+    line-height: 14px;
+    text-decoration-line: underline;
 
-color: #0094FF;
+    color: #0094FF;
+}
+
+
+.file-inp{
+    display: none;
+}
+
+.upload-img{
+    cursor: pointer;
 }

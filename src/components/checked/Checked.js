@@ -1,17 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './checked.css'
 
-const Checked = ({setCheck}) => {
+const Checked = ({setCheckball,checkBall}) => {
+	
 	return (
 		<>
-<<<<<<< HEAD
-			<input type="checkbox" onClick={(e) =>setCheck(e.target.checked) } className="checkbox" id="chk" />
-			
-=======
-			<input type="checkbox" onClick={(e) =>check(e.target.checked) } className="checkbox" id="chk" />
->>>>>>> ae872aa255055bc2360838af755cc6422e44795a
-			<label className="label" htmlFor="chk">
-				<div className="ball"></div> 
+
+			<input type="checkbox"  className="checkbox" id="chk" />
+			<label className="label" onClick={()=> setCheckball(!checkBall)} htmlFor="chk">
+				<div className={checkBall == false ? "ball toggle" : "ball"}></div> 
 			</label>
 		</>
 

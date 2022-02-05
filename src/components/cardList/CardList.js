@@ -1,46 +1,30 @@
 import React, {useEffect, useState,usePrevious} from 'react';
 import Card from '../card/Card';
 import './cardList.css'
-import apiCalls from '../../config/api';
 
-
-const CardList = () => {
+const CardList = ({checkBall,inpValu,selectVal,searchCheck,setSearchCheck,newDate}) => {
     const [cardList, setCardList ] = useState([]);
     const [error, setError] = useState('');
     const [page, setPage] = useState(1);
     const [totalPage, setTotalPage] = useState(0);
-    // const prevGenre = usePrevious(props.genre);
+    const [pages,setPages] = useState(1);;
+    useEffect(async () => {
+        const response = await fetch("https://mok2-pressa.herokuapp.com/ad"+(checkBall ? '?format='+checkBall+'&' : '')+(selectVal ? 'category='+selectVal+'&' : '')+(inpValu ? 'search='+inpValu+'&' : '')+(pages>1 ? 'page='+pages+'&' : pages)+((newDate.length > 2)  ? 'date='+newDate+'&' : ''))
+        const data = await response.json()
+        setCardList(data)
+        setSearchCheck(false)
+        if(data.length == 0)setPages(1)
+        console.log("https://mok2-pressa.herokuapp.com/ad"+(checkBall ? '?format='+checkBall+'&' : '')+(selectVal ? 'category='+selectVal+'&' : '')+(inpValu ? 'search='+inpValu+'&' : '')+(+pages>1 ? 'page='+pages+'&' : '')+((newDate.length > 2)  ? 'date='+newDate+'&' : ''));
+    },[searchCheck,pages]);
 
-    // const loadMore = () => {
-    //     setPage(page + 1);
-    //     console.log(page);
-    //   };
-      
-    
-     useEffect(() => {
-      const getCards = async () => {
-          try {
-              const data = await apiCalls.getCards();
-              setCardList(data);
-              console.log(data)
-          } catch (err) {
-              setError(err.message);  
-              console.log(err.message)    
-          }
-      }
-      getCards();
-    
-  }, []);
+
+
     return (
         <div className='cardList'>
             <div className='row'>
                 {cardList.map(el => <Card  cardEl={el} key={el.id} /> )}
             </div>
-            {/* { page < totalPage ?  */}
-            
-            <button className='more-btn'  >yana yuklash</button> 
-             {/* } */}
-             {/* onClick={loadMore} */}
+            <button className='more-btn'onClick={()=> setPages(pages + 1)} >yana yuklash</button> 
         </div>
 
     );

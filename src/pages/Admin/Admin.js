@@ -8,11 +8,28 @@ import AdminCard from "./AdminCard/AdminCard"
 import { Link } from "react-router-dom"
 
 
-function Admin({setCheckPages}){
+function Admin({setCheckPages,token}){
+    async function checkToken(){
+        let res = await fetch('https://mok2-pressa.herokuapp.com/auth/valid',{
+            method: "GET",
+            headers: {
+                "Content-Type":"application/json",
+                "token": window.localStorage.getItem('token')
+            }
+        })
+        let data = await res.json()
+        if(data.status != 200){
+            window.localStorage.removeItem('token')
+            window.location.href = "/login";
+        }
+    }
+    
+    checkToken()
+    
     setCheckPages(true)
     const [notificationLength, setNotificationLength] = useState()
     const [arr,setArr] = useState([]);
-    const [btnCheck,setBtnCheck] = useState("/pendding")
+    const [btnCheck,setBtnCheck] = useState("/pendding?limit=1000")
     const [active,setActive] = useState(1);
     const [cancelBtn,setCancelBtn] = useState(false);
     const [acceptBtn,setAcceptBtn] = useState(false);
@@ -20,6 +37,7 @@ function Admin({setCheckPages}){
     const [search,setSearch] = useState("")
     const [searchArr,setsearchArr] = useState([])
     const filtred = []
+    const [clickedCancel,setClickedCancel] = useState(false)
 
     if(arr.length != 0 && search.length != 0){
         filtred.push(arr.filter(item => `${item.user.first_name.toLowerCase()} ${item.user.last_name.toLowerCase()}`.includes(search)))
@@ -39,14 +57,10 @@ function Admin({setCheckPages}){
     }
 
     useEffect(()=> {
-        fetch(`https://mok2-pressa.herokuapp.com/ad/pendding`)
+        fetch(`https://mok2-pressa.herokuapp.com/ad/pendding?limit=1000`)
         .then(req => req.json())
         .then(data => setNotificationLength(data))
-    },[acceptBtn,cancelBtn,arr])
-
-    console.log(arr);
-    
-
+    },[cancelBtn])
     useEffect( async ()=> {
         const response = await fetch(`https://mok2-pressa.herokuapp.com/ad${btnCheck}`);
         const json = await response.json();
@@ -114,7 +128,7 @@ function Admin({setCheckPages}){
                                 <img className="admin__user" src="https://www.replinfosys.com/archicad/images/Softwares-support-icon.png" alt="user" />
                             </div>
                             <div className="admin__user--texts">
-                                <h3 className="admin__user-name">Abbos Janozakov</h3>
+                                <h3 className="admin__user-name">Admin</h3>
                                 <span className="admin__user-id">id:124332</span>
                             </div>
                         </div>
@@ -142,6 +156,7 @@ function Admin({setCheckPages}){
                                         Cancel={Cancel}
                                         Accept={Accept}
                                         RemoveItem={RemoveItem}
+                                        setClickedCancel={setClickedCancel}
                                         />
                                ))
                            : null
